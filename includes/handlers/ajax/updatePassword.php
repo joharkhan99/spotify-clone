@@ -44,7 +44,7 @@ if (strlen($newPassword) > 30 || strlen($newPassword) < 5) {
   echo "Password must be between 5 and 30 chars";
   exit();
 }
-
+//just testing git
 $finalNewPass = password_hash($newPassword, PASSWORD_BCRYPT, ['cost' => 12]);
 
 $query = mysqli_query($connection, "UPDATE users SET password='$finalNewPass' WHERE username='$username'");
