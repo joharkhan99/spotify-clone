@@ -1,0 +1,147 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+#background {
+  background-color: #000;
+  background-image: url(../img/bg3.jpg);
+  background-position: center;
+  background-size: cover;
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+
+/*everything inside inputContainer*/
+
+#loginContainer * {
+  color: white;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+  font-weight: normal;
+  line-height: 1em;
+  box-sizing: border-box;
+}
+
+#loginContainer {
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+  /*dont let this any bigger than this width*/
+  max-width: 1024px;
+}
+
+#inputContainer {
+  width: 400px;
+  padding: 45px;
+  float: left;
+  border-right: 1px solid #999;
+}
+
+#inputContainer h2 {
+  text-align: center;
+}
+
+#inputContainer input[type='text'], #inputContainer input[type='email'], #inputContainer input[type='password'] {
+  display: block;
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1px solid #fff;
+  height: 27px;
+  line-height: 27px;
+  width: 100%;
+  outline: none;
+  transition: border-bottom .3s;
+}
+
+::-webkit-input-placeholder {
+  color: rgb(214, 214, 214);
+}
+
+:-ms-input-placeholder {
+  color: rgb(214, 214, 214);
+}
+
+::-moz-placeholder {
+  color: rgb(214, 214, 214);
+}
+
+#inputContainer label {
+  color: #a0a0a0;
+  font-size: 13px;
+  margin-top: 15px;
+}
+
+#inputContainer button {
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 200px;
+  color: #fff;
+  display: block;
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin: 20px auto;
+  height: 41px;
+  width: 100%;
+  outline: none;
+  cursor: pointer;
+}
+
+.hasAccount span {
+  font-weight: bold;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.hasAccount span:hover {
+  text-decoration: underline;
+}
+
+.hasAccount {
+  text-align: center;
+}
+
+#registerForm, #loginForm {
+  display: none;
+}
+
+#loginText {
+  padding: 45px;
+  /*make it behave like <td>*/
+  display: table-cell;
+}
+
+#loginText h1 {
+  color: #07d159;
+  font-size: 60px;
+  font-weight: bold;
+}
+
+#loginText h2 {
+  /*(top-bottom) (left-right)*/
+  margin: 20px 0px;
+}
+
+#loginText ul {
+  padding: 0;
+}
+
+#loginText li {
+  font-size: 20px;
+  list-style-type: none;
+  padding: 10px;
+  padding-bottom: 0px;
+}
+
+.check {
+  margin-right: 5px;
+  color: #07d140 !important;
+}
+
+#inputContainer .errorMessage {
+  color: #d13607;
+  font-size: 12px;
+  display: block;
+  margin-top: 10px;
+}

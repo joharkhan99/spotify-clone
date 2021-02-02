@@ -1,0 +1,537 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  background-color: #181818;
+  font-size: 14px;
+  /*body wont shrink more than this width*/
+  min-width: 720px;
+}
+
+* {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+  color: #fff;
+  letter-spacing: 1px;
+  outline: none;
+}
+
+#nowPlayingBarContainer {
+  width: 100%;
+  background-color: #282828;
+  bottom: 0;
+  position: fixed;
+  min-width: 620px;
+}
+
+#nowplayingBar {
+  display: flex;
+  height: 90px;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+#nowPlayingLeft, #nowPlayingRight {
+  width: 30%;
+  /*these divs wont shrink more than this width*/
+  min-width: 180px;
+}
+
+#nowPlayingCenter {
+  width: 40%;
+  /* means it wont get any larger than this width */
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#nowplayingBar .content {
+  width: 100%;
+  height: 57px;
+}
+
+.playerControls .buttons {
+  margin: 0 auto;
+  display: table;
+}
+
+.controlButton {
+  background-color: transparent;
+  border: none;
+  vertical-align: middle !important;
+  outline: none;
+  cursor: pointer;
+}
+
+.controlButton i {
+  /* width: 20px;
+  height: 20px; */
+  margin-right: 7px;
+  font-size: 14px;
+  color: #a0a0a0;
+}
+
+.controlButton.play i, .controlButton.pause i {
+  font-size: 30px;
+  /* width: 32px;
+  height: 32px; */
+}
+
+.progressTime {
+  color: #a0a0a0;
+  font-size: 11px;
+  min-width: 40px;
+  text-align: center;
+}
+
+.playbackBar {
+  display: flex;
+}
+
+.progressBar {
+  width: 100%;
+  height: 12px;
+  display: inline-flex;
+  cursor: pointer;
+}
+
+.progressBarBg {
+  background-color: #404040;
+  height: 4px;
+  width: 100%;
+  border-radius: 2px;
+}
+
+.progress {
+  background-color: #a0a0a0;
+  height: 4px;
+  width: 0;
+  border-radius: 2px;
+}
+
+.playbackBar .progressBar {
+  margin-top: 3px;
+}
+
+#nowPlayingLeft .albumArtWork {
+  height: 100%;
+  max-width: 57px;
+  margin-right: 15px;
+  float: left;
+  background-size: cover;
+}
+
+.trackInfo {
+  display: table;
+}
+
+#nowPlayingLeft .trackInfo .trackName {
+  margin: 6px 0;
+  display: inline-block;
+  width: 100%;
+}
+
+#nowPlayingLeft .trackInfo .artistName span {
+  font-size: 12px;
+  color: #a0a0a0;
+}
+
+.volumeBar {
+  width: 180px;
+  position: absolute;
+  right: 0;
+}
+
+.volumeBar .progressBar {
+  width: 125px;
+}
+
+#nowPlayingRight {
+  position: relative;
+  margin-top: 16px;
+}
+
+#topContainer {
+  min-height: 100%;
+  width: 100%;
+}
+
+#navBarContainer {
+  background-color: black;
+  width: 220px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.navBar {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo i {
+  width: 32px;
+  font-size: 45px;
+}
+
+.logo {
+  margin-bottom: 15px;
+}
+
+.navBar .group {
+  border-top: 1px solid #a0a0a0;
+  /*(top-bottom) (left-right)*/
+  padding: 10px 0;
+}
+
+.navItem {
+  padding: 10px 0px;
+  font-size: 14px;
+  font-weight: 700;
+  display: block;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.navItemLink {
+  color: #a0a0a0;
+  text-decoration: none;
+}
+
+.navItemLink:hover {
+  color: #fff;
+}
+
+.navItemLink .icon {
+  color: #a0a0a0;
+  position: absolute;
+  right: 0;
+  top: 8px;
+  font-size: 18px;
+  width: 25px;
+}
+
+.mainViewContainer {
+  /* bcz we want to start next to navbar and navbar has width of 220px */
+  margin-left: 220px;
+  /* bcz we want this upto playingbar and playingbar has height of 90px */
+  padding-bottom: 90px;
+  /* as bcz of navbae we exclude navbar width */
+  width: calc(100%-220px);
+}
+
+#mainContent {
+  padding: 0px 20px;
+}
+
+.pageHeadingBig {
+  padding: 20px;
+  text-align: center;
+}
+
+.gridViewItem {
+  display: inline-block;
+  margin-right: 20px;
+  width: 29%;
+  /* not any bigger than this width */
+  max-width: 200px;
+  /* dont get smaller than this width */
+  min-width: 150px;
+  margin-bottom: 20px;
+}
+
+.gridViewItem img {
+  width: 100%;
+}
+
+.gridViewInfo {
+  font-weight: 300;
+  text-align: center;
+  padding: 5px 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.gridViewItem a {
+  text-decoration: none;
+}
+
+.entityInfo {
+  padding: 40px 0 10px 0;
+  display: inline-block;
+  width: 100%;
+}
+
+.entityInfo .leftSection {
+  width: 30%;
+  float: left;
+  max-width: 250px;
+}
+
+.entityInfo .leftSection img {
+  width: 100%;
+}
+
+.entityInfo .rightSection {
+  width: 30%;
+  float: left;
+  padding: 5px 10px 5px 40px;
+  box-sizing: border-box;
+}
+
+.entityInfo .rightSection h2 {
+  margin-top: 0px;
+}
+
+.entityInfo .rightSection p {
+  color: #939393;
+  font-weight: 200;
+}
+
+.trackList {
+  padding: 0;
+}
+
+.trackListRow {
+  height: 40px;
+  padding: 15px 10px;
+  list-style: none;
+}
+
+.trackListRow span {
+  font-weight: 200;
+  color: #939393;
+}
+
+.trackListRow:hover {
+  background-color: #2a2a2a;
+}
+
+.trackListRow .trackCount {
+  width: 10%;
+  /* margin-right: 20px; */
+  float: left;
+}
+
+.trackListRow .trackCount i {
+  width: 20px;
+  position: absolute;
+  cursor: pointer;
+  visibility: hidden;
+}
+
+.trackListRow:hover .trackCount i {
+  visibility: visible;
+}
+
+.trackListRow .trackCount span {
+  visibility: visible;
+}
+
+.trackListRow:hover .trackCount span {
+  visibility: hidden;
+}
+
+.trackListRow .trackInfo {
+  width: 75%;
+  float: left;
+}
+
+.trackListRow .trackInfo span {
+  display: block;
+}
+
+.trackListRow .trackOptions {
+  width: 5%;
+  float: left;
+  text-align: right;
+}
+
+.trackListRow .trackOptions i {
+  width: 15px;
+  visibility: hidden;
+}
+
+.trackListRow:hover .trackOptions i {
+  visibility: visible;
+}
+
+.trackListRow .trackDuration {
+  width: 12%;
+  float: left;
+  text-align: right;
+}
+
+.trackListRow .trackInfo .trackName {
+  color: #fff;
+  margin-bottom: 7px;
+}
+
+.active {
+  color: rgb(15, 114, 15) !important;
+}
+
+.artistInfo {
+  text-align: center;
+}
+
+.button {
+  color: #fff;
+  cursor: pointer;
+  margin-bottom: 10px;
+  background-color: transparent;
+  font-weight: 500;
+  letter-spacing: 2px;
+  border: 2px solid #fff;
+  border-radius: 500px;
+  padding: 15px;
+  min-width: 130px;
+}
+
+.button.green {
+  background-color: #2ebd59;
+  border-color: #2ebd59;
+  text-transform: uppercase;
+}
+
+.borderBottom {
+  border-bottom: 1px solid #939393;
+  margin-bottom: 20px;
+}
+
+.trackListContainer h2, .gridViewContainer h2 {
+  text-align: center;
+}
+
+.searchContainer {
+  background-color: #242424;
+  /* (top-bottom), (left-right) */
+  padding: 20px 28px;
+}
+
+.searchContainer h4 {
+  margin: 0;
+  font-weight: 300;
+}
+
+.searchContainer .searchInput {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-weight: 700;
+  font-size: 62px;
+  letter-spacing: 2px;
+  outline: none;
+}
+
+.searchResultRow {
+  padding: 15px 10px;
+}
+
+.searchResultRow:hover {
+  background-color: #282828;
+}
+
+.searchResultRow .artistName span {
+  color: #fff;
+}
+
+.noResults {
+  color: rgb(147, 147, 147);
+}
+
+.artistContainer h2 {
+  text-align: center;
+}
+
+.artistContainer.borderBottom {
+  padding-bottom: 17px;
+}
+
+.buttonItems .button {
+  display: block;
+  margin: 0 auto 20px auto;
+}
+
+.playlistsContainer {
+  padding: 10px 0;
+}
+
+.playlistimage {
+  border: 3px solid #282828;
+  padding: 5px;
+}
+
+.optionsMenu {
+  position: fixed;
+  background-color: #282828;
+  width: 200px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+  z-index: 1000;
+  display: none;
+}
+
+.optionsMenu .item {
+  width: 100%;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  font-weight: 400;
+  color: rgba(147, 147, 147, 0.8);
+  cursor: pointer;
+  height: 40px;
+  background-color: #282828;
+  font-size: 14px;
+}
+
+.optionsMenu .item:hover {
+  color: #fff;
+  background-color: #333;
+  border-color: #333;
+}
+
+.optionsMenu select {
+  border: none;
+  -webkit-appearance: none;
+  appearance: none;
+  -moz-appearance: none;
+}
+
+.userInfo h1 {
+  text-align: center;
+}
+
+.userDetails {
+  padding: 20px;
+}
+
+.userDetails .container h2 {
+  text-align: center;
+}
+
+.userDetails .container input[type='text'], .userDetails .container input[type='password'], .userDetails .container .button {
+  display: block;
+  margin: 16px auto;
+}
+
+.userDetails .container input[type="text"], .userDetails .container input[type="password"] {
+  height: 50px;
+  width: 100%;
+  background: #1f1f1f;
+  border: none;
+  font-size: 18px;
+  font-weight: 300;
+  padding: 0 20px;
+}
+
+.userDetails .container .message {
+  color: #2ebd59;
+  font-weight: 300;
+}
