@@ -1,6 +1,11 @@
 # spotify-clone
 
 ### small clone of spotify app for listening music.
+
+<hr>
+
+<a href='http://bruh.ezyro.com/spotifyclone/register.php'>CLICK FOR DEMO</a>
+
 <hr>
 
 <ul>
