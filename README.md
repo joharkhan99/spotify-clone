@@ -4,7 +4,7 @@
 
 <hr>
 
-<a href='http://bruh.ezyro.com/spotifyclone/register.php'>CLICK FOR DEMO</a>
+<a href='http://bruh.ezyro.com/spotifyclone/register.php' target='_blank'>CLICK FOR DEMO</a>
 
 <hr>
 
